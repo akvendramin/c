@@ -28,10 +28,17 @@ typedef double f64;
 #define MEGABYTES(value) (KILOBYTES(value) * (s64)1024)
 #define GIGABYTES(value) (MEGABYTES(value) * (s64)1024)
 #define TERABYTES(value) (GIGABYTES(value) * (s64)1024)
+#define MAX_S32 0x7FFFFFFF
+#define MAX_U32 0xFFFFFFFF
+#define MAX_S64 0x7FFFFFFFFFFFFFFF
+#define MAX_U64 0xFFFFFFFFFFFFFFFF
+
+#ifndef PLATFORM_NO_API
 
 #define PLATFORM_API
-
 PLATFORM_API void platform_get_error_message(uint *error, void *buffer, uptr buffer_size);
 PLATFORM_API void platform_write_console(uint *error, void *buffer, uptr buffer_size);
+
+#endif
 
 #endif
